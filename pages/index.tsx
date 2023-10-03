@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import booklist from "../public/bookslist";
 import { useState, useEffect } from "react";
-import Search from "components/searchbar";
+import Search from "components/Searchbar";
 import { Provider } from "react-redux";
 import { configureStore } from '@reduxjs/toolkit';
 import { Cart, CartItem } from "types/Cart";
@@ -34,13 +34,14 @@ import { useRouter } from "next/router";
 import BookDetails from "./bookDetails";
 import BookDetailsComponent from "components/BookDetailsComponenet";
 import BooksShoppingCart from "components/Cart";
+import { google_api_key } from "./key";
 
 
 export default function Home() {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState<boolean>(false);
-  //const apiKey = "AIzaSyAnxD1AORZOcLPWRMmBtIWxMRRSrBzyS8Y";
-  const apiKey = "AIzaSyAKDXFl-UK4kzHdlLD8P-PiCqQSebmc9I0";
+
+  const apiKey = google_api_key;
   
   const router = useRouter();
   const { query } = router;

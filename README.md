@@ -1,15 +1,15 @@
 # Impact Coding Assessment - Bookstore app
 ### User story - Book browsing & Book Search
 -   Main Next.js page is /pages/index.tsx
--   That loads a Search component ( components /searchbar) in MUI AppBar that manages the seach Query (google API is alerady case-insensitive) and passes back to parent component. Triggers on change as well as button
--   Maintains the API Key for Google Libray search ( key needs to be roated, managed in .env )
+-   Main page loads a 'Search' component ( components/Searchbar) in MUI AppBar that manages the seach Query (google API is alerady case-insensitive) and passes user entered search query back to parent component. Triggers onChange as well as on search button click.
+-   API Key for Google Libray search ( key needs to be rotated and  managed in .env ) is in other page.
 -   Main page also laods BookRecord component in map for each Google API result.
 -   User the type interface of Google Book API from (types/Book.ts)
 
 ### User story - Book Details
--   Main page also laods BookDetailsComponents passes the selectedBookID state ( thats updated on call back from BookRecord component)
+-   Main page also laods BookDetailsComponents by passing the selectedBookID state ( selectedBookID is updated by value from a call back function from BookRecord component)
 -   User can go back to results - basically same page but hides and displays results block or details componetn based on flag that gets changes whenever user clicks "back to list"
--   Also added "More info" that passes selected book id to another next.js page that makes google API call with ID. 
+-   Also added "More info" that passes selected book id to another next.js (pages/bookDetails.tsx)page that makes google API call with ID. 
 
 ### User story - Engaging UI
 - Care has been taken to load a MUI loader gif while Book Details API is laoding.
@@ -28,13 +28,11 @@
 -  Assumed Basket and Cart are similar, in given time couldn't implement.
 
 #### 
-Design choices 
+## Design choices that were not implemented. 
+-   Initally intended to do in multiple pages for all components, when users navigates between components the idea was to use Redux to reatain complex states ( of cart, current search results etc). However ran into challenges using Redux with Next.Js. Resorted to standard state hooks approach for this assignment.
+- Ideally shoud have used Next.js api's to proxy google api so that API Key could've been compleatly managed at server side.
 
-Initally intended to do in multiple pages for all components, when users navigates between components the idea was to use Redux to reatain complex states ( of cart, current search results etc). However rean into challenges using Redux with Next.Js. Resorted to standard state hooks approach for this assignment.
-
-
-
-
+###
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
