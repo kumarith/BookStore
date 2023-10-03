@@ -1,3 +1,41 @@
+# Impact Coding Assessment - Bookstore app
+### User story - Book browsing & Book Search
+-   Main Next.js page is /pages/index.tsx
+-   That loads a Search component ( components /searchbar) in MUI AppBar that manages the seach Query (google API is alerady case-insensitive) and passes back to parent component. Triggers on change as well as button
+-   Maintains the API Key for Google Libray search ( key needs to be roated, managed in .env )
+-   Main page also laods BookRecord component in map for each Google API result.
+-   User the type interface of Google Book API from (types/Book.ts)
+
+### User story - Book Details
+-   Main page also laods BookDetailsComponents passes the selectedBookID state ( thats updated on call back from BookRecord component)
+-   User can go back to results - basically same page but hides and displays results block or details componetn based on flag that gets changes whenever user clicks "back to list"
+-   Also added "More info" that passes selected book id to another next.js page that makes google API call with ID. 
+
+### User story - Engaging UI
+- Care has been taken to load a MUI loader gif while Book Details API is laoding.
+
+### User story - Shopping Cart
+- Cart is another component that gets updated when user adds to cart from details component.
+- Cart shows price as well.
+- Remove function is not implemented.
+
+
+### User story - Discounted Books 
+-   Random price and discount has been set while rendering the result , by passsing random values (between 1-100) to Search resuts component (BookRecord)
+- Same price will be passed to cart.
+
+### User story - Add to Basket 
+-  Assumed Basket and Cart are similar, in given time couldn't implement.
+
+#### 
+Design choices 
+
+Initally intended to do in multiple pages for all components, when users navigates between components the idea was to use Redux to reatain complex states ( of cart, current search results etc). However rean into challenges using Redux with Next.Js. Resorted to standard state hooks approach for this assignment.
+
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

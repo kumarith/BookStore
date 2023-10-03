@@ -1,4 +1,3 @@
-import { Book } from 'types/Book';
 /*
  Used https://quicktype.io/ for easier modelling.
 */
@@ -124,6 +123,10 @@ export interface VolumeInfo {
 export interface ImageLinks {
     smallThumbnail: string;
     thumbnail:      string;
+    large: string;
+    medium:      string;
+    extraLarge:      string;
+
 }
 
 export interface IndustryIdentifier {
@@ -158,3 +161,4 @@ export interface ReadingModes {
     text:  boolean;
     image: boolean;
 }
+
