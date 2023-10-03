@@ -4,4 +4,11 @@ const nextConfig = {
   swcMinify: true,
 }
 
-module.exports = nextConfig
+//module.exports = nextConfig
+
+module.exports = {
+  webpack(config) {
+    config.resolve.extensions.push('.ts', '.tsx');
+    return config;
+  }
+};
