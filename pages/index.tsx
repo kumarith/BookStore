@@ -41,7 +41,8 @@ export default function Home() {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState<boolean>(false);
 
-  const apiKey = google_api_key;
+  //const apiKey = google_api_key;
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
   
   const router = useRouter();
   const { query } = router;

@@ -2,12 +2,12 @@
 ### User story - Book browsing & Book Search
 -   Main Next.js page is /pages/index.tsx
 -   Main page loads a 'Search' component ( components/Searchbar) in MUI AppBar that manages the seach Query (google API is alerady case-insensitive) and passes user entered search query back to parent component. Triggers onChange as well as on search button click.
--   API Key for Google Libray search ( key needs to be rotated and  managed in .env ) is in other page.
+-   API Key for Google Libray search managed in env.
 -   Main page also laods BookRecord component in map for each Google API result.
--   User the type interface of Google Book API from (types/Book.ts)
+-   Uses the interface of Google Book API from (types/Book.ts)
 
 ### User story - Book Details
--   Main page also laods BookDetailsComponents by passing the selectedBookID state ( selectedBookID is updated by value from a call back function from BookRecord component)
+-   Main page also loads BookDetailsComponents by passing the selectedBookID state ( selectedBookID is updated by value from a call back function from BookRecord component)
 -   User can go back to results - basically same page but hides and displays results block or details componetn based on flag that gets changes whenever user clicks "back to list"
 -   Also added "More info" that passes selected book id to another next.js (pages/bookDetails.tsx)page that makes google API call with ID. 
 
@@ -17,7 +17,7 @@
 ### User story - Shopping Cart
 - Cart is another component that gets updated when user adds to cart from details component.
 - Cart shows price as well.
-- Remove function is not implemented.
+- "Remove item" function is not implemented.
 
 
 ### User story - Discounted Books 
