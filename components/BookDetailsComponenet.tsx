@@ -10,8 +10,6 @@ import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 
 
-
-
 // Define an interface for the callback function
 interface BookDetailsClose {
   (): void;
@@ -76,11 +74,9 @@ const BookDetailsComponent: React.FC<BookDetailsProps> = ({ onClose , id, addToC
           */}
             <div style={{justifyContent: 'right',  display: 'flex' , padding:'20px'}} >
                 <Button  onClick={onClose} variant="outlined" color="primary"  style={{margin:"15px"}} startIcon={<ArrowBackIosIcon />}> Back to list </Button>
-                <Button  onClick={onClose} variant="contained" color="info" style={{margin:"15px"}} startIcon={<MonetizationOnIcon />}>Price : {price} </Button>
-                <Button  onClick={onClose} variant="contained" color="error"  style={{margin:"15px"}}  startIcon={<LocalOfferIcon />}> Discount :  {discount} %</Button>
-
+                <Button  variant="contained" color="info" style={{margin:"15px"}} startIcon={<MonetizationOnIcon />}>Price : {price} </Button>
+                <Button  variant="contained" color="error"  style={{margin:"15px"}}  startIcon={<LocalOfferIcon />}> Discount :  {discount} %</Button>
                 <Button style={{justifyContent: 'left',  display: 'flex', margin:"15px"}}  onClick ={() => {addToCart(book.id,book.volumeInfo.title,price,2)}} variant="outlined" color="primary"  startIcon={<AddShoppingCartIcon />}> Add to Cart </Button>
-
             </div>
 
             </div>

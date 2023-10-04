@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import booklist from "../public/bookslist";
 import { useState, useEffect } from "react";
-import Search from "components/Searchbar";
+import Search from "../components/searchbar";
 import { Provider } from "react-redux";
 import { configureStore } from '@reduxjs/toolkit';
 import { Cart, CartItem } from "types/Cart";
@@ -67,15 +67,13 @@ export default function Home() {
        if(String(searchQuery).trim() === ""){
            setBooks([]);
        }
-     
+    
       try {
         const response = await fetch(
           `https://www.googleapis.com/books/v1/volumes?q=${searchQuery}&key=${apiKey}`
         );
         const data = await response.json();
         console.log(" => " + data.items.length);
-       
-      
         setBooks(data.items);
        
       } catch (error) {
@@ -87,10 +85,7 @@ export default function Home() {
   }, [searchQuery,cartItems]);
 
  const triggerSearch = (query:string) => {
-      /* not working .. */
-      setLoading(true);
       setSearchQuery(query)
-      setLoading(false);
  }
 
   function addToCartItemsState(_id: string, _title: string, _price: number, _count: number) {
@@ -101,7 +96,6 @@ export default function Home() {
   }
 
   return (
-
 
   <div> {/** MainContainer */}
     <AppBar position="static" style={appBar}>

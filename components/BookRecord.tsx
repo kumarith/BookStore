@@ -15,7 +15,7 @@ interface BookRecordInterface {
 }
 
 const BookRecord: React.FC<BookRecordInterface> = ({ book, whenSelectedForDetails , discount, price}) => {
-  return <div>
+return <div>
 <Card style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', maxWidth: 800 }}>
       <CardMedia
         component="img"
