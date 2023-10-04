@@ -34,7 +34,6 @@ import { useRouter } from "next/router";
 import BookDetails from "./bookDetails";
 import BookDetailsComponent from "components/BookDetailsComponenet";
 import BooksShoppingCart from "components/Cart";
-import { google_api_key } from "./key";
 
 
 export default function Home() {
