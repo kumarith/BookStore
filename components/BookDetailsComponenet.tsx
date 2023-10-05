@@ -26,7 +26,9 @@ interface BookDetailsProps {
  
 
 const BookDetailsComponent: React.FC<BookDetailsProps> = ({ onClose , id, addToCart, price, discount}) => {
-  const API_URL = `https://www.googleapis.com/books/v1/volumes/${id}`;
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
+  //const API_URL = `https://www.googleapis.com/books/v1/volumes/${id}`;
+  const API_URL = `https://www.googleapis.com/books/v1/volumes/${id}?key=${apiKey}`;
   const [book, setBook] = useState<Book | null>(null);
 
   async function fetchBookDetails() {

@@ -17,7 +17,8 @@ function BookDetails() {
   const [book, setBook] = useState<Book | null>(null);
   /** Google API is already case insensitive */
   /** Open api , no key required. */
-  const API_URL = `https://www.googleapis.com/books/v1/volumes/${id}`;
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
+  const API_URL = `https://www.googleapis.com/books/v1/volumes/${id}?key=${apiKey}?;
 
   useEffect(() => {
     async function fetchBookDetails() {
