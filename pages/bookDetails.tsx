@@ -18,7 +18,7 @@ function BookDetails() {
   /** Google API is already case insensitive */
   /** Open api , no key required. */
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
-  const API_URL = `https://www.googleapis.com/books/v1/volumes/${id}?key=${apiKey}?;
+  const API_URL = `https://www.googleapis.com/books/v1/volumes/${id}?key=${apiKey}`;
 
   useEffect(() => {
     async function fetchBookDetails() {
